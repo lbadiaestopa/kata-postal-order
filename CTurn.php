@@ -2,7 +2,7 @@
 
 class CTurn extends Turn {
 
-    private Type $type = TYPE::C;
+    private string $type = 'C';
     private int $number = 0;
     private static int $totalTurns = 0;
 
@@ -19,6 +19,6 @@ class CTurn extends Turn {
 
     public function __toString(): string
     {
-        return $this->type->value . $this->number;
+        return $this->type . $this->number;
     }
 }
