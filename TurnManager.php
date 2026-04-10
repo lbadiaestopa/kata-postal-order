@@ -7,7 +7,7 @@ class TurnManager
 {
     private array $turns = []; 
 
-    public function newTurn(): void
+    public function createNewTurn(): void
     {
         $turn = new CTurn();
         $this->turns[] = $turn;
@@ -17,6 +17,11 @@ class TurnManager
     public function callTurn(): void 
     {
         echo $this->turns[0] . " - It's your turn" . PHP_EOL;
+        $this->removeTurn();
+    }
+
+    public function removeTurn(): void
+    {
         unset($this->turns[0]);
         $this->turns = array_values($this->turns);
     }
