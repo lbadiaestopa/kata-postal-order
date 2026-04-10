@@ -1,20 +1,26 @@
 <?php
 
 require_once __DIR__ . '/Turn.php';
+require_once __DIR__ . '/Type.php';
 require_once __DIR__ . '/CTurn.php';
+require_once __DIR__ . '/ETurn.php';
+
 
 class TurnManager
 {
-    private array $turns = []; 
+    private array $turns = [];
 
-    public function createNewTurn(): void
+    public function createNewTurn(Type $type): void
     {
-        $turn = new CTurn();
+        $turn = match ($type) {
+            Type::C => new CTurn(),
+            Type::E => new ETurn(),
+        };
         $this->turns[] = $turn;
         echo $turn . PHP_EOL;
     }
 
-    public function callTurn(): void 
+    public function callTurn(): void
     {
         echo $this->turns[0] . " - It's your turn" . PHP_EOL;
         $this->removeTurn();
