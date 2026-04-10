@@ -11,14 +11,18 @@ class TurnManager
     private array $turns = [];
 
     public function createNewTurn(Type $type): void
-    {
-        $turn = match ($type) {
-            Type::C => new CTurn(),
-            Type::E => new ETurn(),
-        };
-        $this->turns[] = $turn;
-        echo $turn . PHP_EOL;
-    }
+{
+    $turn = match ($type) {
+        Type::C => new CTurn(),
+        Type::E => new ETurn(),
+        Type::R => new RTurn(),
+        Type::O => new OTurn(),
+        Type::I => new ITurn(),
+    };
+
+    $this->turns[] = $turn;
+    echo $turn . PHP_EOL;
+}
 
     public function callTurn(): void
     {
