@@ -16,6 +16,17 @@ class CTurn extends Turn {
     {
         self::$totalTurns++;
     }
+    
+    private function generateNumber(): string
+    {
+        if (self::$totalTurns < 10) {
+            return '00' . self::$totalTurns;
+        }
+        if (self::$totalTurns < 100) {
+            return '0' . self::$totalTurns;
+        }
+        return self::$totalTurns;
+    }
 
     public function __toString(): string
     {
