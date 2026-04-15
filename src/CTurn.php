@@ -3,20 +3,20 @@
 class CTurn extends Turn {
 
     private string $type = 'C';
-    private int $number = 0;
-    private static int $totalTurns = 0;
+    private string $number;
+    private static int $totalTurns = 23;
 
     public function __construct()
     {
         $this->addNewTurn();
-        $this->number = self::$totalTurns;
+        $this->number = $this->generateNumber();
     }
 
     public function addNewTurn()
     {
         self::$totalTurns++;
     }
-    
+
     private function generateNumber(): string
     {
         if (self::$totalTurns < 10) {

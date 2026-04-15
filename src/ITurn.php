@@ -3,13 +3,13 @@
 class ITurn extends Turn {
 
     private string $type = 'I';
-    private int $number = 0;
+    private string $number;
     private static int $totalTurns = 0;
 
     public function __construct()
     {
         $this->addNewTurn();
-        $this->number = self::$totalTurns;
+        $this->number = $this->generateNumber();
     }
 
     public function addNewTurn()
