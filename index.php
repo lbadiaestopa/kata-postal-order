@@ -1,13 +1,13 @@
 <?php
 
-require_once __DIR__ . '/Turn.php';
-require_once __DIR__ . '/Type.php';
-require_once __DIR__ . '/CTurn.php';
-require_once __DIR__ . '/ETurn.php';
-require_once __DIR__ . '/RTurn.php';
-require_once __DIR__ . '/OTurn.php';
-require_once __DIR__ . '/ITurn.php';
-require_once __DIR__ . '/TurnManager.php';
+require_once __DIR__ . '/src/Turn.php';
+require_once __DIR__ . '/src/Type.php';
+require_once __DIR__ . '/src/CTurn.php';
+require_once __DIR__ . '/src/ETurn.php';
+require_once __DIR__ . '/src/RTurn.php';
+require_once __DIR__ . '/src/OTurn.php';
+require_once __DIR__ . '/src/ITurn.php';
+require_once __DIR__ . '/src/TurnManager.php';
 
 $turnManager = new TurnManager();
 $turnManager->createNewTurn(Type::C);
